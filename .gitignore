@@ -3,4 +3,5 @@ build
 .DS_Store
 .eslintcache
 .temp-eslintcache
+.env
 package-lock.json
