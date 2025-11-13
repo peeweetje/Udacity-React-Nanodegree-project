@@ -1,25 +1,25 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import ArrowBack from '../../icons/arrow-back.svg'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const SearchBooksBar = styled.div`
- position: fixed;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
   display: flex;
   box-shadow: 0 0.25rem 0.25rem -0.25rem #C7D6D5;
-`
+`;
+
 export const CloseSearch = styled(Link)`
   width: 3.125rem;
   background: #eee;
-  background-image: url(${ArrowBack});
+  background-image: url('/src/icons/arrow-back.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1.75rem;
   font-size: 0;
-`
+`;
 
 export const SearchBooksInputWrapper = styled.div`
  flex: 1;

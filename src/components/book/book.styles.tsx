@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import arrowDropdown from '../../icons/arrow-drop-down.svg'
 
 
 export const BookContainer = styled.div`
@@ -26,25 +25,26 @@ export const BookShelfChanger = styled.div`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background:#4b5179;
-  background-image: url(${arrowDropdown});
+  background: #4b5179;
+  background-image: url('/src/icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.25rem;
-  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16), 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.23);
+  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16),
+    0 0.1875rem 0.375rem rgba(0, 0, 0, 0.23);
 
   select {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-  font-family: 'montserrat';
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 
-  option:checked {
-  color: red;
- }
-}
-`
+    option:checked {
+      color: red;
+    }
+  }
+`;
 export const BookTitle = styled.div`
  margin-top: 1rem;
  font-size: 0.8rem;
