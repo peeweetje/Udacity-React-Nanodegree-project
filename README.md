@@ -1,3 +1,7 @@
+## Update 2025
+> - Migrating app to vite.
+
+
 ## Update 2021
 
 > - Add Cypress to project => npx cypress open
@@ -8,8 +12,6 @@
 > - Removed css => Add styled-components.
 > - Change folder structure.
 > - Add typescript to project.
-> - Add workflow for github-actions.
-> - deployed app to Heroku.
 
 ## My-Reads: A Book Tracking App
 
