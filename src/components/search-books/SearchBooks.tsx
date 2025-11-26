@@ -13,7 +13,6 @@ import {
 interface IsearchBooksProps {
   books: BookType[];
   onShelfChange: any;
-  history: any;
 }
 
 const SearchBooks: FC<IsearchBooksProps> = ({ books, onShelfChange }) => {

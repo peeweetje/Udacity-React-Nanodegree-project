@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SearchBooks from './components/search-books/SearchBooks';
 import ListBooks from './components/list-books/ListBooks';
 import * as BooksAPI from './utils/BooksAPI';
@@ -30,11 +30,10 @@ const BooksApp: FC = () => {
   };
 
   return (
-    <>
+    <Routes>
       <Route
         path='/'
-        exact
-        render={() => (
+        element={
           <>
             {isLoading === false ? (
               <>
@@ -49,19 +48,18 @@ const BooksApp: FC = () => {
               </LoadingStyle>
             )}
           </>
-        )}
+        }
       />
       <Route
         path='/search'
-        render={({ history }) => (
+        element={
           <SearchBooks
             onShelfChange={onShelfChange}
-            history={history}
             books={books}
           />
-        )}
+        }
       />
-    </>
+    </Routes>
   );
 };
 
