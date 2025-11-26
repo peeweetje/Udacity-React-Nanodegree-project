@@ -6,7 +6,7 @@ import {
   BookShelfBooks,
   BooksGrid,
 } from './BookShelf.styles';
-import ReactStars from 'react-rating-stars-component';
+import ReactStars from 'react-stars';
 
 interface IbookShelfProps {
   bookshelfTitle: string;
@@ -27,6 +27,8 @@ const BookShelf: FC<IbookShelfProps> = ({
     count: 5,
     a11y: true,
     isHalf: true,
+    color2: '#ffd700',
+    edit: true,
   };
 
   const ratingStarsChanged = () => {
