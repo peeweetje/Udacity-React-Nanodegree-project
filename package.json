@@ -17,9 +17,9 @@
     "react-debounce-input": "^3.3.0",
     "react-dom": "^19.2.0",
     "react-stars": "^2.2.5",
-    "react-router-dom": "^5.2.0",
-    "serve": "^14.0.1",
-    "styled-components": "^5.3.5"
+    "react-router-dom": "^7.9.6",
+    "serve": "^14.2.5",
+    "styled-components": "^6.1.19"
   },
   "browserslist": {
     "production": [
