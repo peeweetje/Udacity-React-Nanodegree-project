@@ -1,27 +1,37 @@
 import styled from 'styled-components';
 
 export const ListBooksContents = styled.div`
-  padding: 0 0 5rem;
+  padding: 2rem 0 5rem;
   flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 export const OpenSearch = styled.div`
   position: fixed;
-  right: 1.5625rem;
-  bottom: 1.5625rem;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 100;
 
   a {
-    display: block;
-    width: 3.125rem;
-    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: #4b5179;
+    background: var(--primary-color);
     background-image: url('/src/icons/add.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1.75rem;
-    box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16),
-      0 0.1875rem 0.375rem rgba(0, 0, 0, 0.23);
+    background-size: 28px;
+    box-shadow: 0 4px 10px rgba(187, 134, 252, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 0;
+    
+    &:hover {
+      transform: scale(1.1) rotate(90deg);
+      box-shadow: 0 6px 15px rgba(187, 134, 252, 0.6);
+    }
   }
 `;
