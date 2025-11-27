@@ -1,13 +1,11 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SearchBooks from './components/search-books/SearchBooks';
-import ListBooks from './components/list-books/ListBooks';
 import * as BooksAPI from './utils/BooksAPI';
-import { ListBooksTitle, LoadingStyle } from './appstyles';
 import { BookType } from './components/book/Book';
-import Loading from '../src/components/loading/loading';
+import Home from './Home';
 
-const BooksApp: FC = () => {
+const BooksApp = () => {
   let [books, setBooks] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -34,20 +32,7 @@ const BooksApp: FC = () => {
       <Route
         path='/'
         element={
-          <>
-            {isLoading === false ? (
-              <>
-                <ListBooksTitle>
-                  <h1>Book Shelfs</h1>
-                </ListBooksTitle>
-                <ListBooks books={books} onShelfChange={onShelfChange} />
-              </>
-            ) : (
-              <LoadingStyle>
-                <Loading />
-              </LoadingStyle>
-            )}
-          </>
+          <Home books={books} onShelfChange={onShelfChange} isLoading={isLoading} />
         }
       />
       <Route
