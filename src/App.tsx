@@ -6,7 +6,7 @@ import { BookType } from './components/book/Book';
 import Home from './Home';
 
 const BooksApp = () => {
-  let [books, setBooks] = useState([]);
+  let [books, setBooks] = useState<BookType[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const BooksApp = () => {
     setBooks((books) => {
       return books
         .filter((b: BookType) => b.id !== book.id)
-        .concat([book] as any);
+        .concat([book]);
     });
     BooksAPI.update(book, shelf);
   };

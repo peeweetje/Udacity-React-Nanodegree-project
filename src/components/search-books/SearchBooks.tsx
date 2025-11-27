@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import * as BooksAPI from '../../utils/BooksAPI';
 import Book, { BookType } from '../book/Book';
 import DebounceInput from 'react-debounce-input';
@@ -12,14 +12,14 @@ import {
 
 interface IsearchBooksProps {
   books: BookType[];
-  onShelfChange: any;
+  onShelfChange: (book: BookType, shelf: string) => void;
 }
 
-const SearchBooks: FC<IsearchBooksProps> = ({ books, onShelfChange }) => {
-  const [searchResults, setSearchResults] = useState([]);
+const SearchBooks = ({ books, onShelfChange }: IsearchBooksProps) => {
+  const [searchResults, setSearchResults] = useState<BookType[]>([]);
 
   //Keeps track of the input value
-  const searchForBooks = (e: { target: { value: any } }) => {
+  const searchForBooks = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     if (!query) {
       setSearchResults([]);
@@ -34,8 +34,8 @@ const SearchBooks: FC<IsearchBooksProps> = ({ books, onShelfChange }) => {
       }
       // map over the books returned from the search API, and check if they are on the
       // shelf or not
-      const booksFound = results.map((book: { id: string; shelf: string }) => {
-        const bookOnShelf = books.find((b: any) => b.id === book.id);
+      const booksFound = results.map((book: BookType) => {
+        const bookOnShelf = books.find((b: BookType) => b.id === book.id);
         book.shelf = bookOnShelf ? bookOnShelf.shelf : 'none';
         return book;
       });

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import BookShelf from '../book-shelf/BookShelf';
 import { BookType } from '../book/Book';
@@ -6,18 +6,18 @@ import { ListBooksContents, OpenSearch } from './listBooks.styles';
 
 interface IlistBooksProps {
   books: BookType[];
-  onShelfChange: any;
+  onShelfChange: (book: BookType, shelf: string) => void;
 }
 
-const ListBooks: FC<IlistBooksProps> = ({ books, onShelfChange }) => {
+const ListBooks = ({ books, onShelfChange }: IlistBooksProps) => {
   //Filter the books according to the shelf they belong to.
   const currentlyReading = books.filter(
-    (book: { shelf: string }) => book.shelf === 'currentlyReading'
+    (book: BookType) => book.shelf === 'currentlyReading'
   );
   const wantToRead = books.filter(
-    (book: { shelf: string }) => book.shelf === 'wantToRead'
+    (book: BookType) => book.shelf === 'wantToRead'
   );
-  const read = books.filter((book: { shelf: string }) => book.shelf === 'read');
+  const read = books.filter((book: BookType) => book.shelf === 'read');
 
   return (
     <ListBooksContents>

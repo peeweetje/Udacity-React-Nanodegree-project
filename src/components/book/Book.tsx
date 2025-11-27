@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC } from 'react';
+import React, { ChangeEvent } from 'react';
 import {
   BookContainer,
   BookTop,
@@ -20,10 +20,10 @@ export type BookType = {
 
 interface IbookProps {
   book: BookType;
-  onShelfChange: any;
+  onShelfChange: (book: BookType, shelf: string) => void;
 }
 
-const Book: FC<IbookProps> = ({ book, onShelfChange }) => {
+const Book = ({ book, onShelfChange }: IbookProps) => {
   const ShelfChanger = (e: ChangeEvent<HTMLSelectElement>) => {
     const shelf = e.target.value;
     onShelfChange(book, shelf);

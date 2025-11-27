@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import Book, { BookType } from '../book/Book';
 import {
   BookShelfs,
@@ -10,15 +10,15 @@ import ReactStars from 'react-stars';
 
 interface IbookShelfProps {
   bookshelfTitle: string;
-  bookshelfBooks: any;
-  onShelfChange: () => void;
+  bookshelfBooks: BookType[];
+  onShelfChange: (book: BookType, shelf: string) => void;
 }
 
-const BookShelf: FC<IbookShelfProps> = ({
+const BookShelf = ({
   bookshelfTitle,
   bookshelfBooks,
   onShelfChange,
-}) => {
+}: IbookShelfProps) => {
   const [newRating, setNewRating] = useState([]);
 
   const starConfig = {
